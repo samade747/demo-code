@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Resume Builder</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Unique Path and Shareable Link</h1>
+
+  <!-- Form Section -->
+  <form id="resumeForm">
+    <div class="form-section">
+      <h2>Personal Information</h2>
+      <label for="name">Name</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" required>
+    </div>
+
+    <div class="form-section">
+      <h2>Education</h2>
+      <label for="education">Education</label>
+      <textarea id="education" rows="3" required></textarea>
+    </div>
+
+    <div class="form-section">
+      <h2>Work Experience</h2>
+      <label for="experience">Work Experience</label>
+      <textarea id="experience" rows="3" required></textarea>
+    </div>
+
+    <div class="form-section">
+      <h2>Skills</h2>
+      <label for="skills">Skills</label>
+      <textarea id="skills" rows="3" required></textarea>
+    </div>
+
+    <button type="submit">Generate Resume</button>
+  </form>
+
+ <!-- Resume Display Section -->
+<div id="resumeOutput" class="resume" style="display: none;">
+  <h2>Generated Resume</h2>
+  <p><strong>Name:</strong> <span id="outputName"></span></p>
+  <p><strong>Email:</strong> <span id="outputEmail"></span></p>
+  <p><strong>Phone:</strong> <span id="outputPhone"></span></p>
+  <h3>Education</h3>
+  <p id="outputEducation"></p>
+  <h3>Work Experience</h3>
+  <p id="outputExperience"></p>
+  <h3>Skills</h3>
+  <p id="outputSkills"></p>
+
+  <button id="edit-btn">Enable Editing</button>
+  <button id="download-btn">Download as PDF</button>
+
+  <!-- Share Link Section -->
+  <div id="share-link-container" style="display: none;">
+    <h3>Shareable Link</h3>
+    <a id="share-link" href="#" target="_blank"></a>
+    <button id="copy-btn">Copy Link</button>
+  </div>
+</div>
+
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
